@@ -1,5 +1,4 @@
 import math
-from decimal import Decimal
 # Task 1
 # 1. Define a class which has at least two methods: getString: to get a string from console input printString: to
 # print the string in upper case.
@@ -27,11 +26,11 @@ class Square(Shape):
 # 3. Define a class named Rectangle which inherits from Shape class from task 2. Class instance can be constructed by
 # a length and width. The Rectangle class has a method which can compute the area.
 class Rectangle(Shape):
-    def __init__(self, length: float, width: float):
+    def __init__(self, length, width):
         super().__init__(length)
         self.width = width
 
-    def area(self) -> float:
+    def area(self):
         return self.length * self.width
 
 
@@ -48,14 +47,14 @@ class Point:
     def print_coordinates(self):
         result = ""
         for dimension in self.dimensions:
-            result += f"{dimension} "
-
+            end = str(dimension)
+            result += end
         print(result)
 
     def change_coordinates(self, new_dimensions: tuple):
         self.dimensions = new_dimensions
 
-    def compute_distance(self, other) -> float:
+    def compute_distance(self, other):
         result = 0
         for dimension, other_dimension in zip(self.dimensions, other.dimensions):
             result += (dimension - other_dimension) ** 2
@@ -71,21 +70,19 @@ print(p1.compute_distance(p2))
 # 5. Create a bank account class that has attributes owner, balance and two methods deposit and withdraw. Withdrawals
 # may not exceed the available balance. Instantiate your class, make several deposits and withdrawals, and test to
 # make sure the account can't be overdrawn.
-# class Account:
-#    pass
 class Account:
     def __init__(self, owner: str, balance):
         self.owner = owner
-        self.balance = Decimal(balance)
+        self.balance = balance
 
     def deposit(self, money):
-        new_balance: Decimal = self.balance + Decimal(money)
+        new_balance = self.balance + money
         self.balance = new_balance
 
     def withdraw(self, money):
-        new_balance: Decimal = self.balance - Decimal(money)
+        new_balance = self.balance - (money)
         if new_balance < 0:
-            print(f"You cannot withdraw {money:.2f}, you only have {self.balance:.2f} on balance!")
+            print(f"You can't withdraw {money:.2f}, because your balance is only {self.balance:.2f}!")
             return
 
         self.balance = new_balance
@@ -101,9 +98,9 @@ my_account.withdraw(200)
 
 # 6. Write a program which can filter prime numbers in a list by using filter function. Note: Use lambda to define
 # anonymous functions.
-numbers: list = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+numbers: list = [11, 55, 42, 67, 68, 69, 50]
 
 if_prime = lambda x: all(x % i != 0 for i in range(2, x))
 result_it = filter(if_prime, numbers)
 result_list = list(result_it)
-print(f"Prime numbers: {result_list}")
+print(f"list of prime numbers: {result_list}")
