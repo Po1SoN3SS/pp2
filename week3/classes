@@ -1,0 +1,18 @@
+
+
+1. Найти в промежутке от 1 до 1000 числа,
+у которых пять делителей.
+2. Дан целочисленный массив размера N.
+Найти максимальное количество его одинаковых элементов.
+3. Дано целое число N и набор из N целых чисел.
+Найти максимальное количество четных чисел в наборе, идущих подряд. Если четные числа в наборе отсутствуют, то вывести 0.
+————————————————
+1. Find numbers in the range from 1 to 1000 that have five
+divisors.
+2. An integer array of size N is given.
+Find the maximum number
+the set of its identical elements.
+3. Given an integer N and a set of N integers.
+Find the maximum number of consecutive even numbers in the set.
+ If there are no even numbers in the set, then output 0.
+
